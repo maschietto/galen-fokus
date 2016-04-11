@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+    <servlet-mapping>
+        <servlet-name>ZaposleniController</servlet-name>
+        <url-pattern>/zaposleni</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PonudaController</servlet-name>
+        <url-pattern>/ponuda</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+    <welcome-file-list>
+        <welcome-file>/index.jsp</welcome-file>
+    </welcome-file-list>
+    <servlet>
+        <servlet-name>CommandServlet</servlet-name>
+        <servlet-class>UCController.CommandServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ZaposleniController</servlet-name>
+        <servlet-class>Controller.ZaposleniController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>PonudaController</servlet-name>
+        <servlet-class>Controller.PonudaController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CommandServlet</servlet-name>
+        <url-pattern>/CommandServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>ServletZaAjax</servlet-name>
+        <servlet-class>Ajax.ServletZaAjax</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletZaAjax</servlet-name>
+        <url-pattern>/noviservlet</url-pattern>
+    </servlet-mapping>
+</web-app>

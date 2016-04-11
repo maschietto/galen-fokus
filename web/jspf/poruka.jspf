@@ -1,0 +1,8 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<% String message = (String) request.getAttribute("poruka");
+    if (message != null) {%>
+<div class="alert alert-info">
+    <a href="#" class="close" data-dismiss="alert" ></a>
+    <strong><%=message%></strong> 
+</div>
+ <% }%>

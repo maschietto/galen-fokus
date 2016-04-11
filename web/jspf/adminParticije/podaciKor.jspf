@@ -1,0 +1,53 @@
+<div id="podaci_o_logovanom" style="display: none; position:relative; height:500px; width: 1100px;  background-image: url(assets/css/Pozadina1.png); border: 2px solid gray; text-align: center;  box-shadow: 5px 5px 20px #666; top:1000px;">
+                    
+                    <div id="tabela_svetako2" style="width:60%; height: 70%; position: initial;  margin-left: 20%;" >
+                         
+                        <a href ="javascript:;" onmousedown="slideOutTOP('podaci_o_logovanom');setTimeout(function(){ugasiPodatkeOKorinsiku();},500);" style="position: relative;  ">
+                            <img class="rotate" src="assets/slicice/dole.png" width="50px" height="50px"></a>
+                            
+                        <h2 style="font-family: fantasy; color: #cccccc; margin-left:65%; ">PODACI O VAMA:</h2>  
+                        
+                             <table class="table table-bordered" style="  box-shadow: 0px 0px 20px #666; background: #fff;" id="tabela_admin_podaci">
+                    
+                     
+                               
+                          
+                        
+                        <tr>
+                            <td onclick="menjanjePoljaZaEdit('ime_korisnik');" class="novaDugmeKlasa" style="text-align: center;">Ime:</td>
+                            <td><input onblur="blokiranjePoljaZaEdit('ime_korisnik');" type="text" class="form-control zaAdmin"  id="ime_korisnik"></td>     
+                        </tr> 
+                        
+                        
+                           <tr>
+                        <td onclick="menjanjePoljaZaEdit('prezime_korisnik');" class="novaDugmeKlasa" style="text-align: center;">Prezime:</td> 
+                        <td><input onblur="blokiranjePoljaZaEdit('prezime_korisnik');" type="text" class="form-control zaAdmin"  id="prezime_korisnik"></td>     
+                        </tr> 
+                        
+                         <tr>
+                        <td onclick="menjanjePoljaZaEdit('jmbg_korisnik');" class="novaDugmeKlasa" style="text-align: center;">Jmbg:</td> 
+                        <td><input onblur="blokiranjePoljaZaEdit('jmbg_korisnik');" type="text" class="form-control zaAdmin"  id="jmbg_korisnik"></td>     
+                        </tr> 
+                        
+                           <tr>
+                        <td onclick="menjanjePoljaZaEdit('email_korisnik');" class="novaDugmeKlasa" style="text-align: center;">Email:</td> 
+                        <td><input  onblur="blokiranjePoljaZaEdit('email_korisnik');" type="text" class="form-control zaAdmin"  id="email_korisnik"></td>     
+                        </tr> 
+                        
+                         <tr>
+                        <td onclick="menjanjePoljaZaEdit('telefon_korisnik');" class="novaDugmeKlasa" style="text-align: center;">Telefon:</td> 
+                        <td><input onblur="blokiranjePoljaZaEdit('telefon_korisnik');" type="text" class="form-control zaAdmin"  id="telefon_korisnik"></td>     
+                        </tr> 
+                        
+                         <tr>
+                        <td onclick="menjanjePoljaZaEdit('sifra_korisnik');" class="novaDugmeKlasa" style="text-align: center;">Sifra:</td> 
+                        <td><input onblur="blokiranjePoljaZaEdit('sifra_korisnik');" type="text" class="form-control zaAdmin" id="sifra_korisnik"></td>     
+                        </tr> 
+                    
+                        </table>
+                    
+
+                         <button onclick="sacuvajUlogovanogKorisnika_p();"  style="position: relative ; background-color:#cccccc;" class="btn btn-default"> Sacuvaj </button>
+                    
+                    </div>
+                </div>

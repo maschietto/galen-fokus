@@ -1,0 +1,320 @@
+/*body{
+    height: 100vh;
+    overflow-y: hidden;
+    background: rgba(252,244,233,1);
+    background: -moz-radial-gradient(center, ellipse cover, rgba(252,244,233,1) 0%, rgba(252,244,233,1) 58%, rgba(239,225,205,1) 90%, rgba(239,225,205,1) 100%);
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(252,244,233,1)), color-stop(58%, rgba(252,244,233,1)), color-stop(90%, rgba(239,225,205,1)), color-stop(100%, rgba(239,225,205,1)));
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(252,244,233,1) 0%, rgba(252,244,233,1) 58%, rgba(239,225,205,1) 90%, rgba(239,225,205,1) 100%);
+    background: -o-radial-gradient(center, ellipse cover, rgba(252,244,233,1) 0%, rgba(252,244,233,1) 58%, rgba(239,225,205,1) 90%, rgba(239,225,205,1) 100%);
+    background: -ms-radial-gradient(center, ellipse cover, rgba(252,244,233,1) 0%, rgba(252,244,233,1) 58%, rgba(239,225,205,1) 90%, rgba(239,225,205,1) 100%);
+    background: radial-gradient(ellipse at center, rgba(252,244,233,1) 0%, rgba(252,244,233,1) 58%, rgba(239,225,205,1) 90%, rgba(239,225,205,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcf4e9', endColorstr='#efe1cd', GradientType=1 );
+}*/
+body{
+    background-image: url('bla papir.jpg');
+   background-size: 100%;
+   background-repeat: no-repeat;
+   background-size:cover;
+   background-attachment: fixed;
+   background-position:center;
+  background-color: white;
+  overflow: hidden;
+}
+
+.slicka{
+  
+
+}
+
+.main_container {
+    height: calc(100% - 170px);
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+.table, table *, thead, td, tr, .pagination li * {
+    background: #DEDCDC;
+    border-color: #999 !important;
+}
+
+
+
+
+hr {
+    -moz-border-bottom-colors: none;
+    -moz-border-image: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: #edd391;
+    border-style: solid none;
+    border-width: 1px 0;
+}
+.boxer {
+    margin-top: 50px;
+}
+textarea.form-control {
+    resize: none;
+}
+.pagination li a{
+    color: #d69900;
+}
+.pagination li.active a,
+.pagination li.active a:focus {
+    background: #d9b04a;
+    border-color: #d9b04a;
+}
+.pagination li.active a:hover {
+    color: #333;
+    background: #edd391;
+}
+.my_user_form {
+/*    display: inline-block;*/
+    position: absolute;
+    top: 40%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    height: auto;
+    min-width: 320px;
+    padding: 20px;
+   border: 2px solid gray;
+    box-shadow: 0px 0px 20px #666;
+    background: #fff;
+}
+input,text, textArea,textarea {
+    color: black;
+    
+}
+.my_user_form h2 {
+    text-align: center;
+    padding: 10px;
+    color: black;
+    //box-shadow: 0px 0px 20px #666;
+       // background: #009966;
+}
+.my_user_form .rememberme {
+    width: 50%;
+}
+.my_user_form .reg_anchor {
+    float: right;
+}
+.my_user_form .reg_anchor a{
+    color: #d69900;
+    font-weight: 600;
+}
+footer {
+    height: 40px;
+    /*line-height: 30px;*/
+    font-size: 12px;
+    color: #fff;
+    background: #101010;
+}
+footer .container {
+    line-height: 20px;
+}
+footer .container div:last-child {
+    color: #666;
+}
+@media (min-width:768px) {
+    .rightside {
+        padding-left: 100px;
+    }
+}
+@media screen and (max-width: 768px), screen and (max-height: 700px) {
+    .my_user_form {
+        height: 580px;
+    }
+    .my_user_form h2 {
+        padding: 5px;
+        margin-top: 0;
+        font-size: 25px;
+    }
+    .my_user_form .form-group input,
+    .my_user_form .form-group select {
+        height: 25px;
+    }
+    .my_user_form .form-group label {
+        font-size: 13px;
+    }
+}
+@media screen and (max-width: 420px), screen and (max-height: 500px) {
+    .my_user_form {
+        height: 380px;
+    }
+    .my_user_form h2 {
+        padding: 5px;
+        margin-top: 0;
+        font-size: 20px;
+    }
+    .my_user_form .form-group input,
+    .my_user_form .form-group select {
+        height: 15px;
+        padding: 0px;
+    }
+    .my_user_form .form-group label {
+        font-size: 11px;
+    }
+}
+
+.registracija {
+        
+        display: none; overflow: hidden; width:600px; height: 300px;
+    }
+
+@media screen and (max-width: 420px), screen and (max-height: 500px) {
+    .my_user_form {
+        height: 550px;
+    }
+    .my_user_form h2 {
+        padding: 5px;
+        margin-top: 0;
+        font-size: 18px;
+    }
+    .my_user_form .form-group input,
+    .my_user_form .form-group select {
+        height: 22px;
+    }
+    .my_user_form .form-group select{
+        font-size: 12px;
+        padding: 0px;
+    }
+    .my_user_form .form-group label {
+        font-size: 12px;
+    }
+
+  
+}
+
+
+
+.alexa{
+    list-style-type: none;
+    width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.alexa li { display: inline;
+
+}
+.alert {
+    position: relative;
+    top: 50px;
+    text-align: center;
+    
+}
+
+.levicosak {
+    position: absolute;
+ float: right;
+}
+
+.rotate{
+    -webkit-transition-duration: 0.4s;
+    -moz-transition-duration: 0.4s;
+    -o-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+
+    -webkit-transition-property: -webkit-transform;
+    -moz-transition-property: -moz-transform;
+    -o-transition-property: -o-transform;
+    transition-property: transform;
+
+      overflow:hidden;
+
+}
+.rotate_wheels{
+    -webkit-transition-duration: 0.4s;
+    -moz-transition-duration: 0.4s;
+    -o-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+
+    -webkit-transition-property: -webkit-transform;
+    -moz-transition-property: -moz-transform;
+    -o-transition-property: -o-transform;
+    transition-property: transform;
+
+     overflow:hidden;
+
+}
+
+.rotate:hover
+{
+    -webkit-transform:rotate(360deg);
+    -moz-transform:rotate(360deg);
+    -o-transform:rotate(360deg);
+   
+}
+
+.rotate_wheels
+{
+    -webkit-transform:rotate(360deg);
+    -moz-transform:rotate(360deg);
+    -o-transform:rotate(360deg);
+    animation: 4s spinnow infinite linear;
+   -webkit-animation:spin 4s linear infinite;
+    -moz-animation:spin 4s linear infinite;
+    animation:spin 4s linear infinite;
+}
+
+.dugme_tabela, .novaDugmeKlasa, .dugme_tabela_proizvod_brisi, .dugme_tabela_proizvod,
+.dugme_tabela_ponuda, .dugme_tabela_ponuda_brisi, .dugme_tabela_proizvod_ponuda, .dugme_ponuda_stavka_brisi{
+    
+    background-color: red;
+}
+.novaDugmeKlasa:hover, .dugme_tabela:hover, .dugme_tabela_proizvod_brisi:hover , 
+.dugme_tabela_proizvod:hover, .dugme_tabela_ponuda:hover , .dugme_tabela_ponuda_brisi:hover,.dugme_ponuda_stavka_brisi:hover,
+.dugme_tabela_proizvod_ponuda:hover{
+    
+    background-color: #000000;
+}
+
+.locikonica{
+    
+  background: white url(../slicice/rsz_11icon.png) right no-repeat;
+    padding-right: 17px;
+}
+
+.unlocikonica{
+    
+        
+  background: white url(../slicice/rsz_slicka_zaunlock.png) right no-repeat;
+  padding-right: 17px;
+    
+}
+
+.zaAdmin{
+    
+    background-color: #999999;
+      box-shadow: 0px 0px 20px #666;
+}
+
+.labelaZaCrnuPozadinu{
+    
+    background-color: #999999;
+    border: 2px solid gray;
+    box-shadow: 0px 0px 20px #666;
+}
+input:focus { 
+    background-color: #cccccc;
+}
+    
+.zaSiveDugmice{
+    
+    background-color:#cccccc ;
+}
+
+.dodavanjeMestoId:hover{
+    
+  background-color:red ;
+}
+
+.edituj{
+    
+    width:65%;
+    
+}
+
+.tdfixing{
+    
+    width :20%;
+}

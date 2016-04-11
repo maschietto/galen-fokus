@@ -1,0 +1,19 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+   
+                     <div id="tockiciBre" style="text-align: center; z-index: 4; bottom: 5%; left:77%; position: absolute; opacity: 0;  pointer-events:none; ">
+                        <img  src="assets/slicice/Aleksa_gear.png" id="tocakbr1" style="position: relative; top:26px; left:9px;" width="60%" height="60%">
+                        <img  src="assets/slicice/Aleksa_gear.png" id="tocakbr2" style="position: static;" width="45%" height="45%">
+                        <img  src="assets/slicice/Aleksa_gear.png" id="tocakbr3" style="position: relative; top:-12px; left:-25px;"   width="30%" height="30%">
+                        <img  src="assets/slicice/Aleksa_gear.png" id="tocakbr4" style="position: relative; top:-17px; left:-15px;" width="25%" height="25%">
+                    </div>
+                
+       
+       
+                  
+       <script>rotateAnimation("tocakbr1",30);</script>
+       <script> rotateAnimation("tocakbr2",30);</script>       
+       <script>rotateAnimationBack("tocakbr3",30); </script> 
+       <script>rotateAnimationBack("tocakbr4",30);</script>   
+            
+                   
+       </script>

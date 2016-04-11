@@ -1,0 +1,100 @@
+ <div id="tabela_kupci" style=" display: none ; position:relative; height:500px; width: 1100px;  background-image: url(assets/slicice/rsz_metal-background-bf-red.png); border: 2px solid gray; text-align: center;  box-shadow: 5px 5px 20px #666; left: 0px; bottom: 1400px;">
+                
+     <div>     <a href ="javascript:;" onmousedown="skloniformuZaUnosKupca('tabela_kupci');" style="position: absolute; left:0px; ">
+                            <img class="rotate" src="assets/slicice/gore.png" width="50px" height="50px"></a>
+                            
+               <a href ="javascript:;" onmousedown="$('#unos_kupca_uk').toggle( 'clip' );" style="position: absolute; right:0px; ">
+                            <img class="rotate" src="assets/slicice/Round_arrow.png" width="50px" height="50px"></a>
+                              
+    <h1 id = "panoid" style="text-align: center; font-weight: bolder;  " class=" labelaZaCrnuPozadinu">KUPCI</h1> 
+    </div>
+     
+    
+                            
+ 
+   
+                         <div id="unos_kupca_uk" class="form-group" style="width: 50%; display: none ; border: 3px solid gray;box-shadow: 0px 0px 20px #666;margin-left: 24.5%;"> 
+                          
+                             <h6></h6>
+              
+                          
+                          <label class="labelaZaCrnuPozadinu" style="text-align: center; "> IME KUPCA </label>
+                          <input  type="text" class="form-control zaAdmin" id="unosi_ime_kupca" placeholder="Unesite Ime" required ><br>
+                             <label class="labelaZaCrnuPozadinu" style="text-align: center;"> PIB </label> 
+                             <input type="text" class="form-control zaAdmin" id="unosi_pib_kupca" placeholder="Unesite PIB" required=""><br>
+                              <label  class="labelaZaCrnuPozadinu" style="text-align: center;"> ADRESA </label> 
+                              <input  type="text" class="form-control zaAdmin" id="unosi_adresu_kupca" placeholder="Unesite Adresu" required><br>
+                              <label class="labelaZaCrnuPozadinu" style="text-align: center;"> GRAD </label> 
+                              <input  type="text" class="form-control zaAdmin" style="" id="unosi_grad_kupca" placeholder="Unesite Grad" required><br>
+                            
+                              
+                          
+                             <input type="button" onclick="sacuvajKupca();" id="posalji_poruku" class="btn btn-default zaAdmin" value="Posalji Poruku i Sacuvaj"/>
+                             <input type="button" onclick="vratiSeNaListuKupaca();" id="posalji_poruku" class="btn btn-default zaAdmin" value="Vrati Se Na Listu"/>
+                             <h6></h6>
+                          
+                        </div>
+                            
+
+                
+                        
+                    <div style="display: none;" id="kupac_glob" style="z-index: 2;"> 
+                        
+                   <div id="pretraga_kupaca" style="width:30%; height: 20%; display: inline-block;">
+                        
+                       <input placeholder="Unos imena:"  onkeyup="autoComplete('');" style="background-color:  #cccccc;  border-color: black; box-shadow: 0px 0px 20px #666;" id="demoime" class="form-control tbl1" type="text" name="demo_ime" >
+                        
+                       <br>
+                       <label><h3 style=" font-family: monospace; color:  black;">Unesi Novog Kupca: </h3></label>
+                       
+                       <a href ="javascript:;" onmousedown="UnosKupca();" style="position: relative; ">
+                            <img class="rotate" src="assets/slicice/desno.png" width="50px" height="50px"></a>
+                        
+                    </div>
+<!--                        <button onclick="prikaziTabeluKorisnika();" style="background-color:  #cccccc; border-color: black; box-shadow: 0px 0px 20px #666;" id="pretraga_korisnika" class="btn btn-default">Search</button>-->
+                    
+                   
+                    
+                    
+                   
+                    <div id="tabela_kupci1" style="width:95%; height: 70%; position: initial;  margin-left: 2.5%; " >
+                    
+                        <div  style="border: 3px solid gray; height:186px; overflow-y: scroll; overflow-x: no-content; background: #cccccc;">
+                        
+                            <div  class="alert alert-danger" style="display: none; z-index: 5;" id="poruka_za_tabelu_kupac">
+                            <strong>!Nema Kupaca Pod Tim Imenom!</strong>
+                            <a href="#" class="close" data-dismiss="alert" ></a>
+                        </div>
+                        <br>
+                        <table class="table table-bordered">
+                    
+                         <thead>
+                        <tr>
+                           
+                            <th style="text-align: center;"></th>
+                            <th style="text-align: center;">Naziv Kupca</th>
+                            <th style="text-align: center;">PIB</th>
+                            <th style="text-align: center;">Adresa</th>
+                            <th style="text-align: center;">Grad</th>
+                            <th style="text-align: center;">Obrisi</th>
+                        </tr>
+                                </thead>
+                                
+                                <tbody  id="tabela_kupac">
+                                    
+                                    
+                                </tbody>
+             
+           
+                    
+                </table>
+                        </div>
+                  
+                        
+                        <button onclick="" style="background-color:  #cccccc;" class="btn btn-default">Vrati Se</button>
+                     
+                    </div>
+                </div>
+                
+                    
+ </div>

@@ -1,0 +1,337 @@
+<div id="sva_ponuda"   style=" height:500px; width: 1100px;display: none ;position:relative; background-image: url(assets/css/Pozadina1.png); border: 2px solid gray; text-align: center;  box-shadow: 5px 5px 20px #666; left: 0px;">
+
+
+    
+
+    <div>    <a href ="javascript:;" onmousedown="sakrijPonuduKomplet();" style="position: absolute; left:0px; ">
+            <img class="rotate" src="assets/slicice/gore.png" width="50px" height="50px"></a>
+
+        <a href ="javascript:;"  style="position: absolute; right:0px; ">
+            <img class="rotate" src="assets/slicice/Round_arrow.png" width="50px" height="50px"></a>
+        <h1 style="text-align: center; font-weight: bolder;  " class=" labelaZaCrnuPozadinu">Ponuda</h1> 
+    </div>
+   
+  
+
+    <div class="row boxer">
+        
+          <div  class="alert alert-danger" style=" display:none;" id="poruka_za_listu_stavki_ponude">
+                            !Prazna Ponuda!<a href="#" class="close" data-dismiss="alert" ></a>
+                        </div>
+
+        <div id="ponuda_deo1" style="display:none ; margin-left:2.5%; width:95%;">
+
+            <div class="col-md-4">
+
+                <h3 class="labelaZaCrnuPozadinu" style="text-align: center">Ponuda</h3>
+                <br>
+
+                <div  style="border: 3px solid gray; height:205px; overflow-y: scroll; overflow-x: hidden; background: #cccccc;">
+
+                    <table class="table table-bordered">
+
+                        <thead>
+                            <tr>
+
+                                <th style="text-align: center;">Naziv Proizvoda</th>
+                                <th style="text-align: center;">Kolicina</th>
+                                
+                            </tr>
+                        </thead>
+
+                        <tbody id="tabela_dodatih_proizvoda">
+
+
+                        </tbody>
+
+                    </table>
+
+
+
+
+                </div>
+            </div>
+
+
+            <div  class="col-md-4">
+
+                <h3 class="labelaZaCrnuPozadinu" style="text-align: center"> Podaci o ponudi: </h3>
+
+                <br>
+                <div class="form-group">
+                    <label class="labelaZaCrnuPozadinu" for="naziv">Datum</label>
+                    <input type="text" id="datepicker" class="form-control" style="background-color: #cccccc;"  >
+                </div>
+
+                <div class="form-group">
+                   <label class="labelaZaCrnuPozadinu" for="naziv">Kupac</label>
+                   <select  onmouseup="popuniPodatkeZaKupca();"  class="form-control zaSiveDugmice " style="text-align: center;" id="kupici_za_CB">
+                   </select>
+                </div>
+                <div id="dodatniParametriPretrageKupca" style="display:none;">
+                <div class="form-group">
+                
+                   <select onclick ="showOptions(this);" id="adresaKupcaSaPonude" class="form-control zaSiveDugmice" style="background-color: #cccccc;" > </select>
+              
+                   <br>
+               
+                    <select onclick ="showOptions(this);" id="GradKupcaSaPonude" class="form-control zaSiveDugmice" style="background-color: #cccccc;" > </select>
+                </div>
+                </div>
+
+                <button onclick="pogodiServletSaJsonObjektima();" type="button" class="btn btn-default zaAdmin"  style="position: inherit;">Submit</button>
+                <button onclick="vratiSeNaListuPonuda();" type="button" class="btn btn-default zaAdmin"  style="position: inherit;">Vrati se na listu</button>
+
+             
+                    <div  class="alert alert-danger" style="display:none; z-index: 5;" id="poruka_za_unos_ponude">
+                            <a href="#" class="close" data-dismiss="alert" ></a>
+                        </div>
+                
+                
+                <h3></h3>
+
+
+
+            </div>
+
+            <div class="col-md-4" style="text-align: center">
+                         <h3 class="labelaZaCrnuPozadinu" style="text-align: center"> Lista Proizvoda </h3>
+
+                <div>
+
+
+
+
+                    <div> 
+
+                        <div id="pretrazivanje_proizvoda_ponuda" style="width:70%; height: 20%; display: inline-block;">
+
+                            <input placeholder="Unos Proizvoda:"  onkeyup="autoCompleteProizvodPonuda();" style="background-color:  #cccccc;  border-color: black; box-shadow: 0px 0px 20px #666;" id="proizvod_na_ponudi" class="form-control tbl1" type="text" name="demo_ime" >
+
+                       </div>
+                    
+
+                        <div id="tabela_proizvoda_ponuda" style="width:95%; height: 70%; position: initial;  margin-left: 2.5%; " >
+
+
+                            <br>
+                            <div  style="border: 3px solid gray; height:155px; overflow-y: scroll; overflow-x: no-content; background: #cccccc;">
+
+                                <div  class="alert alert-danger" style="display: none; z-index: 5;" id="poruka_ponuda">
+                                    <strong>!Nema Proizvoda!</strong>
+                                    <a href="#" class="close" data-dismiss="alert" ></a>
+                                </div>
+                                <table class="table table-bordered" >
+
+
+                                    <thead>
+                                        <tr>
+
+                                    
+                                            <th style="text-align: center;">Naziv Proizvoda</th>
+                                          
+                                        </tr>
+                                    </thead>
+
+                                    <tbody id="tabela_proizvodiuponudi">
+
+
+                                    </tbody>
+
+                                </table>
+
+                            </div>
+
+
+                            <h3></h3>
+
+
+                          
+
+                            <h3></h3>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+
+
+
+            </div>      
+
+
+        </div>
+
+        
+         
+        <div   id="ponuda_glob" style="display:none;"> 
+                        
+                 
+
+                    
+                   
+                    <div id="tabelasvihponuda" style="width:95%; height: 70%; position: initial;  margin-left: 2.5%; " >
+                    
+                       
+                        <br>
+                        <div  style="border: 3px solid gray; height:186px; overflow-y: scroll; overflow-x: no-content; background: #cccccc;">
+                        
+                             <div  class="alert alert-danger" style="display: none; z-index: 5;" id="poruka_za_ponude">
+                            <strong>!Nema ponude!</strong>
+                            <a href="#" class="close" data-dismiss="alert" ></a>
+                        </div>
+                            <table class="table table-bordered" >
+                    
+                        
+                                <thead>
+                        <tr>
+                           
+                            <th style="text-align: center;"></th>
+                            <th style="text-align: center;">Kupac</th>
+                            <th style="text-align: center;">Datum</th>
+                            <th style="text-align: center;">Ukupno</th>
+                            <th style="text-align: center;">Obrisi</th>
+                        </tr>
+                                </thead>
+                                
+                                <tbody id="tabela_svih_ponuda">
+                                    
+                                    
+                                </tbody>
+                       
+                </table>
+                         
+                        </div>
+                        
+                        
+                           <h3></h3>
+<!--                    <div id="paginacija_dugmici" style="opacity: 1; display: block;" >   
+                    
+                    <ul class="pagination"  >  
+
+                        <li><input type="button" onclick="prikaziSledecu('prethodna');" style="text-align: center;" id="previous" name="page" value="PRETHODNA" class="btn btn-default"></li>
+                        <li><input type="button" onclick="prikaziSledecu('sledeca');" style="text-align: center;"  id="next" name="page" value="SLEDECA"  class="btn btn-default"></li>
+
+                    </ul>
+                    </div>     -->
+                        <div id="pretrazivanje_ponude" style="width:30%; height: 20%; display: inline-block;">
+                        
+                       <input placeholder="Unos Proizvoda:"  onkeyup="autoCompleteProizvod();" style="background-color:  #cccccc;  border-color: black; box-shadow: 0px 0px 20px #666;" id="demoponuda" class="form-control tbl1" type="text" name="demo_ime" >
+                        
+                       <label><h3 style=" font-family: monospace; color:  black;">Unesi Novu Ponudu:</h3></label>
+                       
+                 
+                       <a href ="javascript:;"  onclick="UnosPonude();" style="position: relative">
+                            <img class="rotate" src="assets/slicice/desno.png" width="50px" height="50px"></a>
+                        
+                    </div>
+                        
+<!--                        <button onclick="VratiSe();" style="background-color:  #cccccc;" class="btn btn-default">Vrati Se</button>-->
+                     
+                        <h3></h3>
+                    </div>
+                </div>
+
+
+<!--         <div id="ponuda_glob" style="display:none;"> -->
+                        
+                 
+
+                    
+                   
+                    <div  id="ponuda_zasebno" style="display:none; " >
+                        
+                          
+                              
+                        
+                          <div style=" margin-left: 7%; border: 3px solid gray; height:200px; width: 88.7%; overflow-y: scroll; overflow-x: no-content; background: #cccccc;">
+                         
+                              
+                   
+                              <table class="table table-bordered edituj" style ="width: 100%;table-layout: fixed;" >
+                    
+                                
+                                <thead>
+                        <tr>
+                           
+                            <th style="text-align: center;">< + ></th>
+                            <th style="text-align: center;">Naziv Proizvoda</th>
+                            <th style="text-align: center;">Cena</th>
+                            <th style="text-align: center;">Kolicina</th>
+                
+                            <th style="text-align: center;">Obrisi</th>
+                        </tr>
+                                </thead>
+                                
+                                                           <tr>
+          <td class="tdfixing"><input onclick="dodajStavkuNaPonudu();" type="button" class="btn btn-default" value = "dodaj stavku" id="dodaj_stavku_ponude_u_tabelu"></td>
+                <td class="tdfixing"><select onclick="showOptions2(this);" on class="form-control zaSiveDugmice " style="text-align: center;" id="izbor_proizvoda_na_st_ponude">
+                     </select></td>
+            <td class="tdfixing"><input  id="cena_proizvoda_tabelaSponude" type="number" class = "form-control zaSiveDugmice"> </td>
+            <td class="tdfixing"><input id="kolicina_prizvoda_tabelaSponude" type="number" class = "form-control zaSiveDugmice"> </td>
+        
+            <td class="tdfixing">...!m!...</td>
+                                    </tr>
+                                
+                                <tbody id="tabela_stavki_ponude">
+         
+                                </tbody>
+                       
+                </table>  
+                             
+                                        
+                          </div>
+                        
+                        <br>
+                        <div style="margin-left: 5%; width: 90%;">
+                   <div class="col-xs-3">     
+<!--                      <label class="labelaZaCrnuPozadinu"id="datum_labela" for="naziv">Datum</label>-->
+<input type="text" id="datum_ponudex" onchange="promenaDatumaNaTabeli();" name="ponuda_data" class="form-control datapick" style="background-color: #cccccc;" >
+                   </div>
+                        
+                    <div class="col-xs-3">   
+<!--                   <label class="labelaZaCrnuPozadinu" for="naziv">Kupac</label>-->
+                   <input type="text" id="kupac_za_ponudux" class="form-control" style="background-color: #cccccc;" >
+                    </div>
+                   
+                   
+                   <div  class="col-xs-3"><select onclick ="showOptions(this);" class="form-control zaSiveDugmice " style="text-align: center;" id="kupci_za_CBsaPOnude">
+                     </select></div>
+                  
+               
+                
+                            <div class="col-xs-3">  
+               <!--<label class="labelaZaCrnuPozadinu" for="naziv">Ukupno</label>-->
+               <input type="text"  id="ukupna_suma_ponude" class="form-control" style="background-color: #cccccc;" readonly="true">
+                     <!--onchange="zabraniIzmenuSumeIzBaze(this);"-->
+                            </div>
+                        </div>
+                       
+                        <br>
+                        <br>
+                        <br>
+                        
+                        <div style="position: absolute; margin-left: 8%;">
+                            <button onclick="sacuvajPonuduUBAzu();" class="btn btn-default zaAdmin" >Submit</button>
+                   <button onclick="vratiSeNaListuPonuda();" type="button" class="btn btn-default zaAdmin" >Vrati se na Listu</button>
+                        </div>
+                      </div>
+                        </div>
+                   
+                    </div>
+                        
+                        
+                   
+
+
+
+
+
+
+
+
+
+
+

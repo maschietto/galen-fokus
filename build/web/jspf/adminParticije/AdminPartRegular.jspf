@@ -1,0 +1,164 @@
+
+<%@ page pageEncoding="UTF-8" %>
+   <div id="administratorski_deop" style="opacity:0;">
+            
+       <%@include file="header_admin.jspf"%> 
+   
+        <main class="main_container" >
+              
+            <div class="container" >
+             <div id="ulaznidiv" >
+                <div class="row boxer">
+                     <div class="center-block">
+                     <h1 id="admin_pojava_text" style=" font-family: fantasy;">ADMINISTRATORSKA STRANA</h1> 
+                       </div>
+                      
+                    
+                   
+                    </div>
+     
+               </div>
+          
+         
+                
+                <div id="tabela_ikontrole" style="display:none; position:relative; height:500px; width: 1100px;  background-image: url(assets/css/Pozadina1.png); border: 2px solid gray; text-align: center;  box-shadow: 5px 5px 20px #666; left: -1500px;">
+                
+                    
+                    <h2 style="font-family: fantasy; color: #cccccc; margin-left:65%; ">KORISNICI</h2> 
+                    
+                             <div id="korisnik_zasebno" style="opaciti:0; display:none;">
+                        
+                        
+                         <div class="form-group" style="width: 50%; display: inline-block;  "> 
+                             <input type="text" class="form-control zaAdmin" style="" id="email_labela"><br>
+                             <input type="text" class="form-control zaAdmin" id="ime_labela"  ><br>
+                             <input type="text" class="form-control zaAdmin" id="prezime_labela"><br>
+                             <input type="text" class="form-control zaAdmin" id="funkcija_labela"><br>
+                             
+                           
+                             <input type="text" class="form-control zaAdmin" id="status_labela"><br>
+                        
+                             <textarea placeholder="Napisite poruku" id="poruka_korisniku" class=" form-control zaAdmin" style=" height: 50%; resize: none;"></textarea>
+                             <br>
+                             <input type="button" onclick="sacuvajKorisnika();" id="posalji_poruku" class="btn btn-default zaAdmin" value="Posalji Poruku i Sacuvaj"/>
+                        
+                             <input type="button" onclick="promeniStatusKorisnika();" id="dugmenceAktivacija" class="btn btn-default zaAdmin" value="Aktiviraj"/>
+                          <input type="button" onclick="VratiSe();" id="vrati_se" class="btn btn-default zaAdmin" value="Vrati Se"/>
+                          
+                          
+                        </div>
+                        
+                    </div>
+                        
+                    <div id="korisnici_glob" style="z-index: 2;"> 
+                        
+                   <div id="pretrazivanje_korisnika" style="width:30%; height: 20%; display: inline-block;">
+                        
+                       <input placeholder="Unos imena:"  onkeyup="autoComplete('');" style="background-color:  #cccccc;  border-color: black; box-shadow: 0px 0px 20px #666;" id="demoime" class="form-control tbl1" type="text" name="demo_ime" >
+                        
+                       <label><h3 style=" font-family: monospace; color:  black;">Prosiri Pretragu</h3></label>
+                       
+                 
+                       <a href ="javascript:;" onmousedown="slideInTabela('prosiri_pretragu_div');slideOutDiv2('tabela_ikontrole');"  style="position: relative;  ">
+                            <img class="rotate" src="assets/slicice/desno.png" width="50px" height="50px"></a>
+                               <div  class="alert alert-danger" style="display: none; z-index: 5;" id="poruka_za_tabelu_zaposleni">
+                            <strong>!Nema Zaposlenog Pod Tim Imenom!</strong>
+                            <a href="#" class="close" data-dismiss="alert" ></a>
+                        </div>
+                        
+                    </div>
+                                  
+                </div>
+<!--                        <button onclick="prikaziTabeluKorisnika();" style="background-color:  #cccccc; border-color: black; box-shadow: 0px 0px 20px #666;" id="pretraga_korisnika" class="btn btn-default">Search</button>-->
+                    
+                 
+                    
+                    
+                   
+                    <div id="tabela_i_sve_tako" style="width:95%; height: 70%; position: initial;  margin-left: 2.5%;" >
+                    
+                     
+                        <br>
+                        <table class="table table-bordered" id="tabela_admin">
+                    
+                        
+          
+                        <tr>
+                            <th></th>
+                            <th style="text-align: center;">Redni broj</th>
+                            <th style="text-align: center;">Naziv</th>
+                            <th style="text-align: center;">Jmbg</th>
+                           
+                        </tr>
+             
+           
+                    
+                </table>
+                    <div id="paginacija_dugmici" style="opacity: 1; display: block;" >   
+                    
+                    <ul class="pagination"  >  
+
+                        <li><input type="button" onclick="prikaziSledecu('prethodna');" style="text-align: center;" id="previous" name="page" value="PRETHODNA" class="btn btn-default"></li>
+                        <li><input type="button" onclick="prikaziSledecu('sledeca');" style="text-align: center;"  id="next" name="page" value="SLEDECA"  class="btn btn-default"></li>
+
+                    </ul>
+                    </div>     
+                        
+                        <button onclick="slideOutDiv2('tabela_ikontrole');" style="background-color:  #cccccc;" class="btn btn-default">Vrati Se</button>
+                     
+                    </div>
+                    
+              
+                
+                  </div>
+             
+                
+                  
+
+
+<div id="prosiri_pretragu_div" style=" display: none ; position: relative; text-align: center; width:300px; height: 500px;  right:-1500px ;z-index: 2;background-image:url(assets/css/Pozadina1.png) ;">
+
+    
+
+<div class="form-group" style = "width: 95%; padding-left: 6%;">
+
+   
+        
+    <a href ="javascript:;" onmousedown="slideOutTabela('prosiri_pretragu_div');slideInDiv1('tabela_ikontrole');" style="position: relative;  ">
+            <img class="rotate" src="assets/slicice/levo.png" width="50px" height="50px"></a><br>
+       
+            <h2 style="font-family: monospace; color:  #cccccc;">Pretrazi:</h2> <br>
+        <input  placeholder="Pretraga po imenu" type="text" class="form-control tbl1" id="ime_pretraga" style="background-color: #cccccc"><br>
+        <input  placeholder="Pretraga po prezimenu" type="text" class="form-control tbl1" id="prezime_pretraga" style="background-color: #cccccc"><br>
+        <input placeholder="pretraga po email u" type="text" class="form-control tbl1" id="email_pretraga" style="background-color: #cccccc"><br>
+         
+        </div>
+    
+  
+
+    
+    <h2>
+        <button onclick="dodatnaPretraga();" id="logindugme" class="btn btn-default" style="position: inherit; background-color: #cccccc">Submit</button>
+    </h2>            
+
+
+
+</div>
+
+                
+              <%@include file="kupac_sve.jspf"%>
+              <%@include file="podaciKor.jspf"%> 
+              <%@include file="proizvod_sve.jspf"%>  
+              <%@include file="ponuda_sve.jspf"%>  
+              <%@include file="tabelaArtikalaProizvodjaca.jspf"%>    
+                  
+      </div>
+            
+           
+              
+        </main>
+        
+        <%@include file="footer.jspf"%>
+       
+        </div>
+  

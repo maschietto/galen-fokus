@@ -1,0 +1,276 @@
+<div id="svi_proizvodi"  style=" display: none ;position:relative; height:900px; width: 1100px; background-image: url(assets/slicice/rsz_old-red-background.png); border: 2px solid gray; text-align: center;  box-shadow: 5px 5px 20px #666; left: 0px;">
+    
+    
+    <div>    <a href ="javascript:;" onmousedown="sakrijFormeZaProizvode('#svi_proizvodi','#proizvodi_glob');" style="position: absolute; left:0px; ">
+                            <img class="rotate" src="assets/slicice/gore.png" width="50px" height="50px"></a>
+                            
+                                <a href ="javascript:;"  style="position: absolute; right:0px; ">
+                            <img class="rotate" src="assets/slicice/Round_arrow.png" width="50px" height="50px"></a>
+    <h1 style="text-align: center; font-weight: bolder;  " class=" labelaZaCrnuPozadinu">Proizvod</h1> 
+    </div>
+
+    <div class="row boxer">
+               
+              <div id="unos_proizvoda_uk" style=" display:none ; margin-left:2.5%; width:95%;">
+              
+                  <div class="col-md-4">
+
+                    <h3 class="labelaZaCrnuPozadinu" style="text-align: center">Proizvod</h3>
+  <br>
+                     <div class="form-group">
+                            <label class="labelaZaCrnuPozadinu" for="naziv">Naziv Proizvoda</label>
+                            <input type="text" id="naziv_proizvoda_unos" class="form-control zaAdmin" placeholder="" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="labelaZaCrnuPozadinu" for="dat">Iznos</label>
+                            <input type="text" id="cena_proizvoda_unos" name="datum" id="datepicker" class="form-control zaAdmin" placeholder="" required>
+                        </div>
+                          
+                </div>
+
+                
+                 <div  class="col-md-4">
+                     
+                       <h3 class="labelaZaCrnuPozadinu" style="text-align: center"> Proizvodjac </h3>
+
+               <br>
+                     <div class="form-group">
+                            <label class="labelaZaCrnuPozadinu" for="naziv">Naziv Proizvodjaca</label>
+                            <input type="text" id="naziv_proizvodjaca_unos" class="form-control zaAdmin" placeholder="" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="labelaZaCrnuPozadinu" for="ul">Ulica Proizvodjaca</label>
+                            <input type="text" name="datum" id="adresa_proizvodjaca_unos" class="form-control zaAdmin" placeholder="" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="labelaZaCrnuPozadinu" for="grad">Grad Proizvodjaca</label>
+                            <input type="text" name="datum" id="grad_proizvodjaca_unos" class="form-control zaAdmin" placeholder="" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="labelaZaCrnuPozadinu" for="broj">Broj Zgrade Proizvodjaca</label>
+                            <input type="text" name="datum" id="broj_proizvodjaca_unos" class="form-control zaAdmin" placeholder="" required>
+                        </div>
+                         
+                       <div class="form-group">
+                            <label class="labelaZaCrnuPozadinu" for="drz">Drzava Proizvodjaca</label>
+                            <input type="text" name="datum" id="drzava_proizvodjaca_unos" class="form-control zaAdmin" placeholder="" required>
+                        </div>
+
+
+                        <button onclick="unosProizvodaProcedura();" type="button" class="btn btn-default zaAdmin"  style="position: inherit;">Submit</button>
+                        <button onclick="vratiSeNaListuProizvoda();" type="button" class="btn btn-default zaAdmin"  style="position: inherit;">Vrati Se na Listu Proizvoda!</button>
+                        
+                           <h3></h3>
+              
+                       
+                       
+               
+            </div>
+                
+                    <div class="col-md-4" style="text-align: center">
+
+                             <h3 class="labelaZaCrnuPozadinu" style="text-align: center"> Jedinica Mere </h3>
+                             <br>
+                              <div class="form-group">
+                            <label class="labelaZaCrnuPozadinu" for="jm">Jedinica Mere</label>
+                           <select  class="form-control zaSiveDugmice "  id="jedinica_mere_unos">
+                                       
+                                        
+                                        
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="labelaZaCrnuPozadinu" for="u kg">Izrazeno u Kilogramima</label>
+                            <input type="number" name="tezina" id="tezina_unos" class="form-control zaAdmin" placeholder="" required>
+                        </div>
+
+                </div>      
+                  
+                 
+ </div>
+              
+              
+           
+              
+              
+         
+    
+    <div>
+        
+        
+        <div id="proizvod_zasebno" style="display:none; position:relative; ">
+                
+                    
+<!--                    <h2 style="font-family: fantasy; color: #cccccc; margin-left:65%; "></h2> -->
+                    
+                            
+                    
+                    <div>
+                        
+                        
+                         <div class="form-group" style="width: 50%; display: inline-block;  "> 
+                               
+                             <a href ="javascript:;" onmousedown="backToPreviousPAge('#proizvodi_glob','#proizvod_zasebno');" style="position: absolute; left:2.5%; top:40%; ">
+                                <img class="rotate" src="assets/slicice/levo.png" width="50px" height="50px"></a>
+                            
+                             <table class="table table-bordered" style="  box-shadow: 0px 0px 20px #666; background: #fff;" id="tabela_proizvod_zasebno">
+                    
+                     
+                               
+                          
+                        
+                        <tr>
+                            <td onclick="menjanjePoljaZaEdit('proizvod_naziv');" class="novaDugmeKlasa" style="text-align: center;">Proizvod</td>
+                            <td><input onblur="blokiranjePoljaZaEdit('proizvod_naziv');" type="text" class="form-control zaSiveDugmice"  id="proizvod_naziv"></td>     
+                        </tr> 
+                        
+                        
+                           <tr>
+                        <td onclick="menjanjePoljaZaEdit('proizvod_cena');" class="novaDugmeKlasa" style="text-align: center;">Iznos</td> 
+                        <td><input onblur="blokiranjePoljaZaEdit('proizvod_cena');" type="text" class="form-control zaSiveDugmice"  id="proizvod_cena"></td>     
+                        </tr> 
+                        
+                         <tr>
+                        <td onclick="menjanjePoljaZaEdit('proizvod_jedinica_mere');" class="novaDugmeKlasa" style="text-align: center;">Jedinica Mere</td> 
+                                <td><select onblur="blokiranjePoljaZaEdit('proizvod_jedinica_mere');" class="form-control zaSiveDugmice "  id="proizvod_jedinica_mere">
+                                       
+                                        
+                                        
+                            </select></td>     
+                        </tr> 
+                        
+                           <tr>
+                        <td onclick="menjanjePoljaZaEdit('proizvod_tezina');" class="novaDugmeKlasa" style="text-align: center;">Tezina U Kg</td> 
+                        <td><input  onblur="blokiranjePoljaZaEdit('proizvod_tezina');" type="text" class="form-control zaSiveDugmice "  id="proizvod_tezina"></td>     
+                        </tr> 
+                        
+                         <tr>
+                        <td onclick="menjanjePoljaZaEdit('proizvodjac_naziv');" class="novaDugmeKlasa" style="text-align: center;">Proizvodjac</td> 
+                        <td><input onblur="blokiranjePoljaZaEdit('proizvodjac_naziv');" type="text" class="form-control zaSiveDugmice "  id="proizvodjac_naziv"></td>     
+                        </tr> 
+                        
+                             <tr>
+                        <td onclick="menjanjePoljaZaEdit('proizvodjac_adresa');" class="novaDugmeKlasa" style="text-align: center;">Adresa Proizvodjac</td> 
+                        <td><input onblur="blokiranjePoljaZaEdit('proizvodjac_adresa');" type="text" class="form-control zaSiveDugmice "  id="proizvodjac_adresa"></td>     
+                        </tr> 
+                        
+                             <tr>
+                        <td onclick="menjanjePoljaZaEdit('proizvodjac_grad');" class="novaDugmeKlasa" style="text-align: center;">Proizvodjac Grad</td> 
+                        <td><input onblur="blokiranjePoljaZaEdit('proizvodjac_grad');" type="text" class="form-control zaSiveDugmice "  id="proizvodjac_grad"></td>     
+                        </tr> 
+                        
+                        
+                             <tr>
+                        <td onclick="menjanjePoljaZaEdit('proizvodjac_broj');" class="novaDugmeKlasa" style="text-align: center;">Broj Adrese Proizvodjaca</td> 
+                        <td><input onblur="blokiranjePoljaZaEdit('proizvodjac_broj');" type="text" class="form-control zaSiveDugmice "  id="proizvodjac_broj"></td>     
+                        </tr> 
+                        
+                        <tr>
+                        <td onclick="menjanjePoljaZaEdit('proizvodjac_drzava');" class="novaDugmeKlasa" style="text-align: center;">Drzava Proizvodjaca</td> 
+                        <td><input onblur="blokiranjePoljaZaEdit('proizvodjac_drzava');" type="text" class="form-control zaSiveDugmice "  id="proizvodjac_drzava"></td>     
+                        </tr> 
+                        
+                        
+                        
+                    
+                        </table>
+                    
+
+                         <button onclick="updateProizvoda();"  style="position: relative ; background-color:#cccccc;" class="btn btn-default"> Sacuvaj Izmene </button>
+                        
+                    </div>
+                        
+                            
+                     
+                        </div>
+                        
+                    </div>
+                        
+                    <div id="proizvodi_glob" style="display:none;"> 
+                        
+                   <div id="pretrazivanje_proizvoda" style="width:30%; height: 20%; display: inline-block;">
+                        
+                       <input placeholder="Unos Proizvoda:"  onkeyup="autoCompleteProizvod();" style="background-color:  #cccccc;  border-color: black; box-shadow: 0px 0px 20px #666;" id="demoproizvod" class="form-control tbl1" type="text" name="demo_ime" >
+                        
+                       <label><h3 style=" font-family: monospace; color:  black;">Unesi proizvod</h3></label>
+                       
+                 
+                       <a href ="javascript:;"  onclick="UnosProizvoda();" style="position: relative">
+                            <img class="rotate" src="assets/slicice/desno.png" width="50px" height="50px"></a>
+                        
+                    </div>
+<!--                        <button onclick="prikaziTabeluKorisnika();" style="background-color:  #cccccc; border-color: black; box-shadow: 0px 0px 20px #666;" id="pretraga_korisnika" class="btn btn-default">Search</button>-->
+                    
+                  
+                    
+                    
+                   
+                    <div id="tabela_i_sve_tako_proizvod" style="width:95%; height: 70%; position: initial;  margin-left: 2.5%; " >
+                      <div  class="alert alert-danger" style="display: none; z-index: 5;" id="poruka_za_proizvod_tabelu">
+                            <strong>!Nema Proizvoda!</strong>
+                            <a href="#" class="close" data-dismiss="alert" ></a>
+                        </div>
+                       
+                        <br>
+                        <div  style="border: 3px solid gray; height:200px; overflow-y: scroll; overflow-x: no-content; background: #cccccc;">
+                        
+                           
+                            <table class="table table-bordered" >
+                    
+                        
+                                <thead>
+                        <tr>
+                           
+                            <th style="text-align: center;">Broj</th>
+                            <th style="text-align: center;">Naziv Proizvoda</th>
+                            <th style="text-align: center;">Cena</th>
+                            <th style="text-align: center;">Jedinica Mere</th>
+                            <th style="text-align: center;">Obrisi</th>
+                        </tr>
+                                </thead>
+                                
+                                <tbody id="tabela_proizvodi">
+                                    
+                                    
+                                </tbody>
+                       
+                </table>
+                         
+                        </div>
+                        
+                        
+                           <h3></h3>
+<!--                    <div id="paginacija_dugmici" style="opacity: 1; display: block;" >   
+                    
+                    <ul class="pagination"  >  
+
+                        <li><input type="button" onclick="prikaziSledecu('prethodna');" style="text-align: center;" id="previous" name="page" value="PRETHODNA" class="btn btn-default"></li>
+                        <li><input type="button" onclick="prikaziSledecu('sledeca');" style="text-align: center;"  id="next" name="page" value="SLEDECA"  class="btn btn-default"></li>
+
+                    </ul>
+                    </div>     -->
+                        
+                        <button onclick="VratiSe();" style="background-color:  #cccccc;" class="btn btn-default">Vrati Se</button>
+                     
+                        <h3></h3>
+                    </div>
+                </div>
+        
+        
+        
+        
+    </div>
+             
+          </div>
+
+    </div>
+    
+    
+    
+    
+    

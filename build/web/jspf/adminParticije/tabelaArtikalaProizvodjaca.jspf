@@ -1,0 +1,44 @@
+
+<div id="svi_artikli_proizvodjaca"  style="height:500px; width: 1100px; display: none ;position:relative; background-image: url(assets/slicice/rsz_old-red-background.png); border: 2px solid gray; text-align: center;  box-shadow: 5px 5px 20px #666; text-align: center;">
+    
+    
+    
+    <div>    <a href ="javascript:;" onmousedown="UgasiTabeluProizvodaProizvodjaca();" style="position: absolute; left:0px; ">
+            <img class="rotate" src="assets/slicice/gore.png" width="50px" height="50px"></a>
+
+        <a href ="javascript:;"  style="position: absolute; right:0px; ">
+            <img class="rotate" src="assets/slicice/Round_arrow.png" width="50px" height="50px"></a>
+        <h1 style="text-align: center; font-weight: bolder;  " class=" labelaZaCrnuPozadinu">Artikli Proizvodjaca</h1> 
+    </div>
+    
+    
+    <hr>
+    <div style="width:95%; height: 70%; position: initial;  margin-left: 2.5%; ">
+     <table class="table table-bordered">
+                    
+                        
+         <thead>
+                        <tr>
+                            
+                            <th style="text-align: center;">IMe Proizvoda</th>
+                            <th style="text-align: center;">Cena</th>
+                           
+                        </tr>
+             
+         </thead>
+         <tbody id="tabela_artikala_proizvodjaca123">
+             
+         </tbody>
+         
+                    
+                </table>
+    </div>
+   <button onclick="UgasiTabeluProizvodaProizvodjaca();" style="background-color:  #cccccc;" class="btn btn-default">Vrati Se</button>
+   
+
+    </div>
+    
+    
+    
+    
+ 
